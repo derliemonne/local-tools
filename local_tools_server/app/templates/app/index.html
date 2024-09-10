@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #clients button {
+            display: block;
+        }
+        .info {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+  <script src="https://unpkg.com/htmx.org@2.0.2"></script>
+</head>
+<body>
+    <h1>Client Management</h1>
+
+    <!-- Show My IP Section -->
+    <button hx-get="/get-local-ip" hx-target="#ipText">Show My IP</button>
+    <div id="ipText" class="info"></div>
+
+    <!-- Start Service Section -->
+    <button>Start Service</button>
+    <div id="serviceText" class="info"></div>
+
+    <!-- Clients Section -->
+    <h2>Clients</h2>
+    <div id="clients">
+        <button>Client 1</button>
+        <button>Client 2</button>
+        <button>Client 1</button>
+    </div>
+</body>
+</html>

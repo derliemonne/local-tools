@@ -1,2 +1,6 @@
-zeroconf
-webcolors
+asgiref==3.8.1
+Django==5.1.1
+ifaddr==0.2.0
+sqlparse==0.5.1
+webcolors==24.8.0
+zeroconf==0.133.0
