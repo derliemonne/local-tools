@@ -26,23 +26,17 @@
     </style>
   <script src="https://unpkg.com/htmx.org@2.0.2"></script>
 </head>
-<body>
+<body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
     <h1>Client Management</h1>
 
-    <!-- Show My IP Section -->
-    <button hx-get="/get-local-ip" hx-target="#ipText">Show My IP</button>
-    <div id="ipText" class="info"></div>
+    <button hx-get="/get-local-ip" hx-target="#ip-text">Show My IP</button>
+    <div id="ip-text" class="info"></div>
 
-    <!-- Start Service Section -->
-    <button>Start Service</button>
-    <div id="serviceText" class="info"></div>
+    <button hx-post="/debug-button-1">Debug 1</button>
 
-    <!-- Clients Section -->
     <h2>Clients</h2>
-    <div id="clients">
-        <button>Client 1</button>
-        <button>Client 2</button>
-        <button>Client 1</button>
+    <div id="clients" hx-get="/available-services" hx-trigger="every 2s">
+        no clients                      
     </div>
 </body>
 </html>
