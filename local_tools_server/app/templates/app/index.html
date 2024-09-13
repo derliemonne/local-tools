@@ -24,7 +24,10 @@
             color: #333;
         }
     </style>
-  <script src="https://unpkg.com/htmx.org@2.0.2"></script>
+    {% load static %}
+    <!-- The defer attribute allows the browser to continue rendering the page whilst htmx is downloading,
+    making your site’s first render faster. (https://django-htmx.readthedocs.io/en/latest/installation.html)-->
+    <script src="{% static 'app/js/htmx.min.js' %}" defer></script>
 </head>
 <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
     <h1>Client Management</h1>
